@@ -1,0 +1,560 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.hero__section {
+    background: url(./images/heroSectionBackground.png);
+    min-height: 55vh;
+    /*generally we don't cover whole page in hero section for background*/
+    background-size: cover;
+    /* will occupy entire space  but from where ?  from center*/
+    background-position: center;
+}
+
+.navbar {
+    display: flex;
+    /*we want equal spacing between content*/
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    padding: 15px 45px;
+}
+
+.navbar a {
+    text-decoration: none;
+    /*to remove underline and color*/
+    color: white;
+}
+
+.navbar__menu_container {
+    display: flex;
+    gap: 20px;
+}
+
+.navbar__menu_container .user__icon {
+    display: none;
+    /*  but we want icon to only show on mobile device so using media query for this */
+}
+
+.hero__section_container {
+    display: flex;
+    padding-top: 40px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    /*it will be given in column*/
+    /* we want to adjust container height as remaining height i.e. height of content background pic subtract height of navigation bar */
+    height: calc(60vh, 60px);
+    /* height of content background pic-height of navigation bar      both these values are in different units so need to use calc */
+}
+
+.hero__section_logo {
+    width: 200px;
+    /* height: ;     for image we should only give only one of either of height or width */
+    /* height:auto; */
+}
+
+.hero__section_title {
+    color: white;
+    text-align: center;
+    font-size: 25px;
+    font-weight: 400;
+}
+
+/* we want to collapse */
+.hero__section_input_container {
+    background-color: white;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 50%;
+    border-radius: 10px;
+}
+
+.input_container_location,
+.input_container_search {
+    padding: 6px;
+    border: none;
+    /*we don't want inner border*/
+}
+
+.input_container_location {
+    width: 24%;
+    border-right: 2px solid gray;
+    /* want one border in between search and location */
+}
+
+.input_container_search {
+    width: 75%;
+}
+
+
+
+/* we offer section */
+
+.container__we__offer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    margin: 1.5rem;
+    /* padding: 20px;   */
+    width: 90%;
+}
+
+.we__offer_card {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgb(206, 198, 198);
+    border-radius: 12px;
+    /* animation on hovering */
+    transition: all 0.4s ease;
+}
+
+.we__offer_card:hover {
+    /* we want to zoom while we hover  so use scale() */
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.we__offer_images {
+    height: 250px;
+    width: 350px;
+    object-fit: cover;
+    object-position: center;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.we__offer_content {
+    /* padding: 5px; */
+    margin: 10px;
+}
+
+.we__offer_content h2 {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.we__offer_content p {
+    font-size: 13px;
+    color: grey;
+}
+
+
+
+/* collections section  */
+.container__collections h1 {
+    margin-left: 11vw;
+    font-size: 35px;
+    font-weight: 500;
+}
+
+.container__collections .sub__heading_container {
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    
+}
+
+.sub__heading_container span:nth-child(2) {
+    color: #ff7e8b;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.collections_card_container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    margin: 3rem auto;
+    /* width: 90%; */
+}
+
+.collections_card_container .card {
+    height: 300px;
+    min-width: 280px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    position: relative;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.card1 {
+    background-image: url('./images/collection1.jpg');
+}
+
+.card2 {
+    background-image: url('./images/collection2.jpg');
+}
+
+.card3 {
+    background-image: url('./images/collection3.jpg');
+}
+
+.card4 {
+    background-image: url('./images/collection4.jpg');
+}
+
+.overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 10px;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.9) 5%, rgba(0, 0, 0, 0.05) 50%, rgba(0, 0, 0, 0.05) 85%);
+    /* generally we put black value where content is */
+}
+
+.collections_card_container .card .content {
+    /*   want the written content of card to be at bottom  */
+    position: absolute;
+    /*  making parent(card) as relative */
+    bottom: 0;
+    left: 0;
+    color: white;
+    padding: 12px 16px;
+    font-size: 0.8rem;
+}
+
+.content h4 {
+    /* font-weight: 400; */
+    letter-spacing: 0.5px;
+}
+
+.content span {
+    padding: 2px;
+}
+
+
+
+/* get the app section  */
+.get__the_app{
+    display: flex;
+    background-color: rgb(243, 232, 222);
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 3rem 6rem;
+}
+.get__the_app .semicontainer{   /* mentioning entire path so that is should not match with any other path*/
+    display: flex;
+    width: 60%;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+.get__the_app .semicontainer .left{
+    flex: 2;            /* we want that left and right flex to be in ratio   so defining flex value smaller so that it looks smaller*/
+}
+
+.get__the_app .semicontainer .left img{   /* mentioning entire path so that is should not match with any other path*/
+    width: 100%;   
+    /* object-fit and background-fit are different are different */
+    object-fit: cover;
+    /* object-position and background-position are different are different */
+    object-position: center;
+}
+.get__the_app .semicontainer .right{
+    flex: 4;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.right .h1{
+    font-weight: 400;
+    font-size: 5rem;
+}
+.radio__button_container .p{
+    font-size: 0.8rem;
+}
+.right .radio__button_container{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+}
+.right .radio__button_container div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.right .radio__button_container div input{
+    height: 15px;
+    width: 15px;
+    /* we want to change color of radio button so     accent-color*/
+    accent-color: rgb(239,79,95);
+}
+
+.right .input_container{
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.input_container button ,  .input_container input{
+    padding: 10px 12px;
+}
+.right .input_container input{
+    flex: auto;
+    border:1.5px solid gray;
+    outline: none;
+    border-radius: 5px;
+}
+.right .input_container button{
+    border: none;
+    background-color: rgb(239, 79, 95);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.right .download__app_container{
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+}
+.right .download__app_container h5{
+    font-size: 400;
+    color: gray;
+}
+
+.right .download__app_container div{
+    display: flex;
+    gap: 1rem;
+}
+.right .download__app_container div img{
+    width: 35%;
+}
+
+
+
+/* footer section */
+/* doing it with grid */
+footer{
+    width: 100%;
+    background-color: rgb(249, 245, 242);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container__footer{
+    width: 80%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    /* background-color: aquamarine; */
+}
+.footer_section1{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 90%;
+    margin: 20px;
+    gap: 2.5rem;
+}
+.footer_section1 img{
+    width: 120px;
+}
+.section1__button_container{
+    display: flex;
+    gap: 1.5rem;
+}
+.section1__button_container button{
+    padding: 5px;
+    width: 90px;
+    border: 1px solid gray;
+    background-color: transparent;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.navigation_container{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    width: 100%;
+    padding: 3rem;
+    /* background-color: aqua; */
+}
+
+.link__container{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 10px;
+}
+.link__container h5{
+    font-weight: 500;
+    font-size: 15px;
+    margin-bottom: 5px;
+    letter-spacing: 0.8px;
+}
+.footer__link{
+    text-decoration: none;
+    color: gray;
+    font-size: 14px;
+    font-weight: 300;
+}
+.footer__link:hover{
+    color: black;
+}
+.social__links_container button{
+    background-color: black;
+    /* display: flex; */
+    border: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 30px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.social__links_container button i{
+    color: white;
+    font-size: 13px;
+    /* display: inline-block; */
+}
+.footer__section_logos{
+    width: 65%;
+    
+}
+.disclaimer{
+    width: 95%;
+    /* margin: auto; */
+    color: gray;
+    font-size: 12px;
+    /* border: 1px solid gray; */
+    padding: 1.5rem;
+}
+
+/* media query for grid used in footer */
+
+@media only screen and (max-width:900px){
+    .navigation_container{
+        grid-template-columns: repeat(3,1fr);
+    }
+}
+@media only screen and (max-width:600px){
+    .navigation_container{
+        grid-template-columns: repeat(2,1fr);     
+    }
+}
+@media only screen and (max-width:420px){
+    .navigation_container{
+        grid-template-columns: repeat(1,1fr);
+    }
+}
+
+
+
+/* left part in get_the_app section is  reduced too much in case of small screen   need to fix it using media query*/
+@media only screen and (max-width:1300px){
+    .get__the_app .semicontainer .left,  .get__the_app .semicontainer .right{
+        flex: 1;
+    }
+    .get__the_app .semicontainer{
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width:900px){
+    .get__the_app{
+        padding: 2rem;
+    }
+    .get__the_app .semicontainer{
+        width: 90%;
+    }
+
+
+}
+@media only screen and (max-width:700px){
+    .get__the_app{
+        padding: 3rem;
+    }
+    .get__the_app .semicontainer{
+        width: 80%;
+        flex-direction: column;
+    }
+}
+
+
+
+/* we want only icon to show in mobile at place of half of navigation bar */
+
+@media only screen and (max-width:500px) {
+    .navbar__menu_container .user__icon {
+        height: 30px;
+        width: 30px;
+        border-radius: 100%;
+        /*we want a circle around logo*/
+        border: 1px solid white;
+        /* logo is not in center we now need to use flex to make it in center */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* don't want to see half of header part in mobile as whole navigation bar will collapse */
+    .link {
+        display: none;
+    }
+
+    .hero__section {
+        /* w ant full screen on header  */
+        min-height: 60vh;
+    }
+
+    .navbar {
+        padding: 16px;
+    }
+
+
+    /* we want that on mobile screen both input boxes will collapse so make them in flex-direction as column */
+    .hero__section_input_container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        background-color: transparent;
+        /*both blocks will look different*/
+    }
+
+    .input_container_location, .input_container_search {
+        padding: 15px;
+        border: 2px solid white;
+        border-radius: 10px;
+        width: 100%;
+    }
+
+    .hero__section_title {
+        font-size: 20px;
+        width: 95%;
+    }
+    .sub__heading_container span:nth-child(1) {
+        display: none;
+    }
+
+}
